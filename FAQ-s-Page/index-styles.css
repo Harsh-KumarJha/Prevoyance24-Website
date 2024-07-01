@@ -1,0 +1,205 @@
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    background-image: url(img/7.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    animation: flickerAnimation 1s linear 1;
+    
+}
+
+.navbar {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar-logo {
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-item {
+    margin-left: 20px;
+}
+
+.navbar-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.navbar-link:hover {
+    color: #00ad00;
+}
+
+@keyframes flickerAnimation {
+    0% { opacity: 0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.faqs-whole-container {
+    max-width: 1300px;
+    margin: 100px auto 20px; 
+    background-color: rgba(0, 0, 0, 0.819);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px #595959b9(0, 0, 0, 0.1);
+    display: flex; 
+    overflow: hidden; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px #595959b9;
+}
+
+.faqs-whole-container-faq-heading {
+    position: absolute;
+    left: 30%;
+    margin-bottom: 20px;
+    color: white;
+    margin-top: 10px;
+    font-family: "Recursive", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.faqs-whole-container-content {
+    margin-top: 70px;
+    flex: 1; 
+    padding: 20px; 
+}   
+
+.faqs-whole-container-toggle-icon {
+    margin-left: 5px;
+    float: right;
+}
+
+.faqs-whole-container-image {
+    padding: 20px;
+}
+
+.faqs-whole-container-faq-item {
+    margin-bottom: 20px;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #1100a9, #1100a9, #058701, #058701);
+    border-image-slice: 1;
+    padding-bottom: 20px;
+    transition: all 0.5s ease;
+}
+
+.faqs-whole-container-faq-item:last-child {
+    border-bottom: none;
+}
+
+.faqs-whole-container-question {
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    transition: color 0.5s ease; 
+}
+
+.faqs-whole-container-question:hover {
+    color: #058701;
+}
+
+.faqs-whole-container-answer {
+    padding: 1px 0;
+    font-size: 16px;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    max-height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    font-weight: normal;
+    margin-top: 5px; 
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+}
+
+.faqs-whole-container-faq-item.active .faqs-whole-container-question {
+    color: green; 
+}
+
+.faqs-whole-container-faq-item.active .faqs-whole-container-answer {
+    display: block;
+    max-height: 1000px; 
+    opacity: 1;
+}
+
+.faqs-whole-container-image img {
+    width: 500px;
+    height: 450px;
+    display: block;
+    border-radius: 10px;
+    margin-top: 50px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    animation: flickerAnimation 1s linear 1;
+}
+
+@media screen and (max-width: 450px) {
+    .faqs-whole-container {
+        max-width: 100%;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 70px;
+    }
+
+    .faqs-whole-container-faq-heading {
+        left: 22px;
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .faqs-whole-container-faq-item {
+        padding: 15px;
+    }
+
+    .faqs-whole-container-image {
+        order: 1;
+    }
+
+    .faqs-whole-container-content {
+        order: 2;
+    }
+    
+    .faqs-whole-container-question {
+        font-size: 15px;
+    }
+
+    .faqs-whole-container-image img {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        border-radius: 5px;
+    }
+}
